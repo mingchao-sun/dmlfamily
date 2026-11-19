@@ -1,0 +1,83 @@
+title: 'DML: Partially Linear IV'
+name: dmlpliv
+jus: '3.0'
+stage: 0
+compilerMode: tame
+children:
+    - type: VariableSupplier
+      persistentItems: false
+      stretchFactor: 1
+      children:
+          - type: TargetLayoutBox
+            label: Outcome
+            children:
+                - type: VariablesListBox
+                  name: outcome
+                  isTarget: true
+                  height: small
+                  maxItemCount: 1
+          - type: TargetLayoutBox
+            label: Endogenous treatment (numeric)
+            children:
+                - type: VariablesListBox
+                  name: treat
+                  isTarget: true
+                  height: small
+                  maxItemCount: 1
+          - type: TargetLayoutBox
+            label: Instrument (numeric)
+            children:
+                - type: VariablesListBox
+                  name: instr
+                  isTarget: true
+                  height: small
+                  maxItemCount: 1
+          - type: TargetLayoutBox
+            label: Covariates
+            children:
+                - type: VariablesListBox
+                  name: covs
+                  isTarget: true
+                  height: small
+    - type: CollapseBox
+      label: Learners
+      collapsed: false
+      children:
+          - type: ComboBox
+            name: lrn_l
+          - type: ComboBox
+            name: lrn_r
+          - type: ComboBox
+            name: lrn_m
+          - type: ComboBox
+            name: rule
+    - type: CollapseBox
+      label: Cross-fitting
+      collapsed: true
+      children:
+          - type: TextBox
+            name: folds
+            label: Number of folds
+            format: number
+          - type: TextBox
+            name: reps
+            label: Number of repetitions of the sample split
+            format: number
+          - type: TextBox
+            name: seed
+            label: Random seed
+            format: number
+          - type: TextBox
+            name: level
+            label: Confidence level (%)
+            format: number
+    - type: CollapseBox
+      label: Output
+      collapsed: true
+      children:
+          - type: CheckBox
+            name: showHelp
+            label: Method notes
+          - type: CheckBox
+            name: showGuide
+            label: Data and setup guide

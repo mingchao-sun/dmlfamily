@@ -1,0 +1,139 @@
+---
+name: dmlirm
+title: 'DML: Binary Treatment (Interactive Model)'
+jas: '1.2'
+version: '1.0.0'
+menuGroup: DML
+menuTitle: Binary Treatment (Interactive Model)
+menuSubtitle: ATE and ATT with doubly robust scores
+
+options:
+    - name: data
+      type: Data
+
+    - name: outcome
+      title: Outcome
+      type: Variable
+      permitted:
+          - numeric
+
+    - name: treat
+      title: Treatment (0/1)
+      type: Variable
+      permitted:
+          - numeric
+          - factor
+
+    - name: covs
+      title: Covariates
+      type: Variables
+      suggested:
+          - continuous
+          - nominal
+      permitted:
+          - numeric
+          - factor
+
+    - name: target
+      title: Effect
+      type: List
+      options:
+          - name: ate
+            title: 'Average treatment effect (ATE)'
+          - name: att
+            title: 'Effect on the treated (ATT)'
+      default: ate
+
+    - name: lrn_g
+      title: Learner for the outcome, E[Y|X,D]
+      type: List
+      options:
+          - name: ols
+            title: 'Linear / logistic regression'
+          - name: lasso
+            title: 'Lasso'
+          - name: ridge
+            title: 'Ridge'
+          - name: enet
+            title: 'Elastic net (alpha 0.5)'
+          - name: rf
+            title: 'Random forest'
+      default: lasso
+
+    - name: lrn_m
+      title: Learner for the propensity score, P(D=1|X)
+      type: List
+      options:
+          - name: ols
+            title: 'Linear / logistic regression'
+          - name: lasso
+            title: 'Lasso'
+          - name: ridge
+            title: 'Ridge'
+          - name: enet
+            title: 'Elastic net (alpha 0.5)'
+          - name: rf
+            title: 'Random forest'
+      default: lasso
+
+    - name: trim
+      title: Trim propensity scores at
+      type: Number
+      default: 0.01
+      min: 0.0001
+      max: 0.2
+
+    - name: plot
+      title: Propensity score plot
+      type: Bool
+      default: true
+
+    - name: rule
+      title: Penalty chosen by cross-validation at
+      type: List
+      options:
+          - name: lambda.min
+            title: 'The minimum error'
+          - name: lambda.1se
+            title: 'One standard error above the minimum'
+      default: lambda.min
+
+    - name: folds
+      title: Number of folds
+      type: Integer
+      default: 5
+      min: 2
+      max: 20
+
+    - name: reps
+      title: Number of repetitions of the sample split
+      type: Integer
+      default: 1
+      min: 1
+      max: 50
+
+    - name: seed
+      title: Random seed
+      type: Integer
+      default: 1234
+      min: 1
+      max: 999999
+
+    - name: level
+      title: Confidence level (%)
+      type: Number
+      default: 95
+      min: 50
+      max: 99.9
+
+    - name: showHelp
+      title: Method notes
+      type: Bool
+      default: false
+
+    - name: showGuide
+      title: Data and setup guide
+      type: Bool
+      default: false
+
+...

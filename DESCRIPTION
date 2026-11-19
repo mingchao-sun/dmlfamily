@@ -1,0 +1,20 @@
+Package: dmlfamily
+Type: Package
+Title: Double Machine Learning Family for jamovi
+Version: 1.0.0
+Author: Mingchao Sun
+Maintainer: Mingchao Sun <mingchao.sun@hotmail.com>
+URL: https://github.com/mingchao-sun/dmlfamily
+BugReports: https://github.com/mingchao-sun/dmlfamily/issues
+Description: Double/debiased machine learning with cross-fitting for jamovi: partially
+    linear regression, the interactive regression model for a binary treatment (ATE and
+    ATT) and partially linear instrumental variables, with linear, lasso, ridge, elastic
+    net and random forest learners (Chernozhukov et al., 2018).
+License: GPL-3
+Encoding: UTF-8
+Imports:
+    jmvcore (>= 2.3.4),
+    R6,
+    ggplot2,
+    glmnet,
+    ranger

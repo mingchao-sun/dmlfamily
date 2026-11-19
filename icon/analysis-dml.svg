@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" width="74" height="44" viewBox="0 0 74 44" version="1.1">
+  <title>Double Machine Learning Family</title>
+  <metadata>
+    <rdf:RDF>
+      <cc:Work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <dc:title>Double Machine Learning Family</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <!-- cross-fitting: 3 rounds over 4 folds, the held-out fold (orange) moves from round to round -->
+  <g fill="#ffffff" stroke="#6b9de8" stroke-width="2">
+    <rect x="3.5" y="16.5" width="6" height="6" rx="1"/>
+    <rect x="12.5" y="7.5" width="6" height="6" rx="1"/>
+    <rect x="21.5" y="7.5" width="6" height="6" rx="1"/>
+    <rect x="30.5" y="7.5" width="6" height="6" rx="1"/>
+    <rect x="3.5" y="25.5" width="6" height="6" rx="1"/>
+    <rect x="21.5" y="16.5" width="6" height="6" rx="1"/>
+    <rect x="30.5" y="16.5" width="6" height="6" rx="1"/>
+    <rect x="12.5" y="25.5" width="6" height="6" rx="1"/>
+    <rect x="30.5" y="25.5" width="6" height="6" rx="1"/>
+  </g>
+  <g fill="#e6ac40" stroke="#e6ac40" stroke-width="2">
+    <rect x="3.5" y="7.5" width="6" height="6" rx="1"/>
+    <rect x="12.5" y="16.5" width="6" height="6" rx="1"/>
+    <rect x="21.5" y="25.5" width="6" height="6" rx="1"/>
+  </g>
+  <!-- learners feed the estimate -->
+  <path d="M41 19.5 L48.5 19.5" fill="none" stroke="#6b9de8" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M47 14.9 L53 19.5 L47 24.1 Z" fill="#6b9de8" stroke="#6b9de8" stroke-width="1.2" stroke-linejoin="round"/>
+  <!-- null value and the debiased estimate with its confidence interval -->
+  <path d="M55 36.5 L71 36.5" fill="none" stroke="#9a9a9a" stroke-width="1" stroke-dasharray="1.5 2.5" stroke-linecap="round"/>
+  <path d="M63 6 L63 33" fill="none" stroke="#e6ac40" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M59.5 6 L66.5 6 M59.5 33 L66.5 33" fill="none" stroke="#e6ac40" stroke-width="2.4" stroke-linecap="round"/>
+  <circle cx="63" cy="19.5" r="4.6" fill="#ffffff" stroke="#e6ac40" stroke-width="2.6"/>
+</svg>

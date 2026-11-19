@@ -1,0 +1,89 @@
+---
+title: Double Machine Learning Family
+name: dmlfamily
+version: 1.0.0
+jms: '1.0'
+authors:
+  - Mingchao Sun
+maintainer: Mingchao Sun <mingchao.sun@hotmail.com>
+date: '2026-11-20'
+type: R
+description: >-
+  Double/debiased machine learning with cross-fitting: partially linear
+  regression, a binary treatment with the interactive regression model (ATE and
+  ATT) and partially linear instrumental variables, with lasso, ridge, elastic
+  net, random forest and linear learners.
+datasets:
+  - name: Simulated partially linear model
+    path: sim_plr.csv
+    description: >-
+      Simulated, 1,000 rows: outcome y, treatment d, 20 correlated covariates x1
+      to x20 with non-linear effects; the true effect is 0.5. Use for Partially
+      Linear Regression.
+  - name: Simulated binary treatment
+    path: sim_irm.csv
+    description: >-
+      Simulated, 2,000 rows: outcome y, binary treatment d with confounding,
+      covariates x1 to x10, heterogeneous effect (sample ATE 0.979, ATT 1.107).
+      Use for Binary Treatment (Interactive Model).
+  - name: Simulated partially linear IV
+    path: sim_pliv.csv
+    description: >-
+      Simulated, 1,000 rows: outcome y, endogenous treatment d, instrument z,
+      covariates x1 to x10; the true effect is 0.5. Use for Partially Linear IV.
+  - name: Simulated binary instrument
+    path: sim_iivm.csv
+    description: >-
+      Simulated, 2,000 rows: outcome y, binary treatment d (take-up of a
+      programme), binary instrument z (an encouragement), covariates x1 to x10;
+      55% compliers whose effect is 1.0 + 0.3 x3 (sample LATE 0.991),
+      always-takers and never-takers. Use for Binary Instrument (Interactive
+      IV).
+  - name: Simulated panel difference-in-differences
+    path: sim_did.csv
+    description: >-
+      Simulated, 2,000 units with two periods in wide format: unit, treated
+      (0/1), outcome before y_before and after y_after, covariates x1 to x6.
+      Selection into treatment and the trend depend on the covariates; the
+      effect on the treated is 1.0 + 0.3 x3 (sample ATT 1.009). Use for
+      Difference-in-Differences (Panel).
+analyses:
+  - name: dmlplr
+    title: 'DML: Partially Linear Regression'
+    menuGroup: DML
+    menuTitle: Partially Linear Regression
+    menuSubtitle: Effect of a treatment with many controls
+    ns: dmlfamily
+    category: analyses
+  - name: dmlirm
+    title: 'DML: Binary Treatment (Interactive Model)'
+    menuGroup: DML
+    menuTitle: Binary Treatment (Interactive Model)
+    menuSubtitle: ATE and ATT with doubly robust scores
+    ns: dmlfamily
+    category: analyses
+  - name: dmlpliv
+    title: 'DML: Partially Linear IV'
+    menuGroup: DML
+    menuTitle: Partially Linear IV
+    menuSubtitle: Instrumental variable with many controls
+    ns: dmlfamily
+    category: analyses
+  - title: 'DML: Difference-in-Differences (Panel)'
+    name: dmldid
+    ns: dmlfamily
+    category: analyses
+    menuGroup: DML
+    menuTitle: Difference-in-Differences (Panel)
+    menuSubtitle: Effect on the treated, two periods, many controls
+  - title: 'DML: Binary Instrument (Interactive IV Model)'
+    name: dmliivm
+    ns: dmlfamily
+    category: analyses
+    menuGroup: DML
+    menuTitle: Binary Instrument (Interactive IV)
+    menuSubtitle: Effect on the compliers (LATE) with many controls
+usesNative: true
+minApp: 1.0.8
+
+...
