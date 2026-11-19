@@ -1,7 +1,7 @@
 # dmlfamily — double machine learning in jamovi
 
 A jamovi module for causal effects estimated with double/debiased machine learning (Chernozhukov et al., 2018): flexible
-learners for the nuisance functions, cross-fitting, and valid standard errors for the effect. Chinese summary: [README.zh.md](README.zh.md).
+learners for the nuisance functions, cross-fitting, and valid standard errors for the effect. Chinese summary: [README.zh.md](README.zh.md). Japanese summary: [README.ja.md](README.ja.md).
 
 ## Analyses (jamovi menu: DML)
 
