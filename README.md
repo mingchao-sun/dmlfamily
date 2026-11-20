@@ -27,9 +27,9 @@ jmvtools::install(home = "C:/Program Files/jamovi 28.17.0.0")
 ```
 
 ## Use from R (Rj editor, scripts)
-Every analysis is also an R function, for example
+Every analysis is also an R function. The functions are not exported, so call them as `module:::function`, and pass `NULL` for the arguments you do not use (they have no default values). For example, after installing the module,
 ```r
-dmlfamily::dmlplr(data = d, outcome = "y", treat = "d", covs = paste0("x", 1:20), lrn_l = "lasso", lrn_m = "lasso")
+dmlfamily:::dmlplr(data = d, outcome = "y", treat = "d", covs = paste0("x", 1:20), lrn_l = "lasso", lrn_m = "lasso")
 ```
 
 ## Data format
